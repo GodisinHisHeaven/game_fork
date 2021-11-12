@@ -1,12 +1,12 @@
 #ifndef NODE_HPP
 #define NODE_HPP
 
-#include <vector>
+#include <set>
 
 template <typename T>
 struct Node {
   T data;
-  std::vector<T> actions;
+  std::set<T> actions;
 };
 
 #endif

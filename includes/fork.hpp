@@ -33,7 +33,7 @@ public:
     void restart();
 
     // copy game from one to another
-    Fork& operator=(const DNAstrand& rhs);
+    Fork& operator=(const Fork& rhs);
 
 private:
     // add more as needed

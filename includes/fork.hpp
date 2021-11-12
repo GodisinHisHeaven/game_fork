@@ -46,6 +46,9 @@ private:
 
     // used for restarting the game.
     std::string startingAction;
+
+    // for debugging purposes
+    void printAdj_();
 };
 
 #endif

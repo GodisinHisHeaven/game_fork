@@ -12,6 +12,7 @@
 
 // fork will be all backend, driver.cc will be used to create the user interface with terminal
 // user doesn't interact with this file
+// add more public member functions as needed
 class Fork {
 public:
 
@@ -35,6 +36,8 @@ public:
     Fork& operator=(const DNAstrand& rhs);
 
 private:
+    // add more as needed
+
     // stored adj list
     std::map<std::string, std::set<std::string>> adj_;
 

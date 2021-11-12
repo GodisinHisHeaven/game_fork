@@ -41,7 +41,7 @@ private:
     // stored adj list
     std::map<std::string, std::set<std::string>> adj_;
 
-    // keep track of where the user is located
+    // keep track of where the user is located!
     std::string currentAction;
 
     // used for restarting the game.

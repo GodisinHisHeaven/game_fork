@@ -44,7 +44,7 @@ private:
     // keep track of where the user is located
     std::string currentAction;
 
-    // used for restarting the game
+    // used for restarting the game.
     std::string startingAction;
 };
 

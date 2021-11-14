@@ -7,12 +7,9 @@ Fork::Fork(std::string filename) {
     file.open(filename);
 
     for( std::string line; getline( file, line ); ) {
-        if (line == "") {
-            break;
-        }
         Node<std::string> *temp = new Node<std::string>;
         std::string NodeName = "";
-        if (line[0] != '#') {
+        if (line[0] != '#' && line != "") {
             size_t pos1 = line.find_first_of(':');
             // std::cout << ">>" << line.substr(0,pos1) << "<<";
             NodeName = line.substr(0,pos1);

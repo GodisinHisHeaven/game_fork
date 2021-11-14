@@ -1,6 +1,10 @@
 # comments always have '#' as the first character, no spaces in front
-# no blank rows unless it has a '#' at start
 #
+#
+
+
+
+
 # this is a test story
 # represents a 9x9 grid as follows:
 # -----------------------------------------------------------------------------------
@@ -13,9 +17,8 @@
 # | botleft                 | botmid                   | botright                   |
 # | this is a Node          | this is a Node           | Ending Node                |
 # -----------------------------------------------------------------------------------
-#
-#
-#
+
+
 topleft:Starting Node:topmid|midleft
 topmid:this is a node:topleft|topright|midmid
 topright:this is a node:topmid|midright
@@ -25,6 +28,6 @@ midright:this is a node:topright|midmid|botright
 botleft:this is a node:midleft|botmid
 botmid:this is a node:botright|midmid|botleft
 botright:End Node:midright|botmid
-#
-#
-# no extra blank lines at bottom unless it has a '#' at start
+
+
+# no extra spaces or indents

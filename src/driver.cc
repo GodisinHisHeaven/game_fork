@@ -12,5 +12,5 @@ using namespace std;
 // determine the flow of the game Start screen -> directions -> play -> end screen -> credits
 
 int main() {
-    cout << "Hello World" << endl;
+    Fork test("TestStory.txt");
 }

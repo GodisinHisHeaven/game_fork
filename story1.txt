@@ -1,6 +1,6 @@
 {action}:{info}:{action1}|{action2}|{action3}|{action4}|{action5}
 {action}:{info}:{action1}|{action2}|{action3}|{action4}|{action5}
-{action}:{info}:{action1}|{action2}|{action3}|{action4}|{action5}
+{action}:{info}:{action1}
 
 // to be stored in 'adj_'
 // action will be mapped to '{info}:{action1}{action2}...'

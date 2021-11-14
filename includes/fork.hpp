@@ -7,6 +7,9 @@
 #include <sstream>
 #include <algorithm>
 #include <queue>
+#include <iostream>
+#include <fstream>
+#include <cstring>
 // set imported from "node.hpp"
 
 
@@ -39,7 +42,8 @@ private:
     // add more as needed
 
     // stored adj list
-    std::map<std::string, std::set<std::string>> adj_;
+    // maps strings to a set of nodes
+    std::map<std::string, std::set<Node<std::string>>> adj_;
 
     // keep track of where the user is located!
     std::string currentAction;

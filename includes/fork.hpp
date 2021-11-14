@@ -38,21 +38,21 @@ public:
     // copy game from one to another
     Fork& operator=(const Fork& rhs);
 
+    // for debugging purposes
+    void printAdj_();
+
 private:
     // add more as needed
 
     // stored adj list
     // maps strings to a set of nodes
-    std::map<std::string, std::set<Node<std::string>>> adj_;
+    std::map<std::string, Node<std::string>*> adj_;
 
     // keep track of where the user is located!
     std::string currentAction;
 
     // used for restarting the game.
     std::string startingAction;
-
-    // for debugging purposes
-    void printAdj_();
 };
 
 #endif

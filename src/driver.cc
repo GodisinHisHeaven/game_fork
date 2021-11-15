@@ -13,5 +13,5 @@ using namespace std;
 
 int main() {
     Fork test("TestStory.txt");
-    test.printAdj_();
+    test.printOriginal();
 }

@@ -21,6 +21,7 @@ public:
 
     // take in filename and read it do adj_
     // this is where the file reading occurs
+    // @param filename to be read by constructor
     Fork(std::string filename);
 
     // deallocate memory that is dynamically allocated
@@ -39,7 +40,11 @@ public:
     Fork& operator=(const Fork& rhs);
 
     // for debugging purposes
+    // prints adjacenecy list
     void printAdj_();
+
+    // prints with same formatting as file
+    void printOriginal();
 
 private:
     // add more as needed
@@ -53,6 +58,11 @@ private:
 
     // used for restarting the game.
     std::string startingAction;
+
+    // removes trailing white space
+    // @param str to be trimmed
+    // @return returns string with no white space at the end
+    std::string trim(std::string str);
 };
 
 #endif

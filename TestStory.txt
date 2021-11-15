@@ -19,7 +19,7 @@
 # -----------------------------------------------------------------------------------
 
 
-topleft:Starting Node:topmid|midleft
+topleft:Starting Node:topmid|midleft      #------> this is the starting node <----------
 topmid:this is a node:topleft|topright|midmid
 topright:this is a node:topmid|midright
 midleft:this is a node:topleft|midmid|botleft
@@ -27,7 +27,7 @@ midmid:this is a node:topmid|midright|botmid|midleft
 midright:this is a node:topright|midmid|botright
 botleft:this is a node:midleft|botmid
 botmid:this is a node:botright|midmid|botleft
-botright:End Node:midright|botmid
+botright:End Node:midright|botmid           #------> this is the ending node <----------
 
 
 # no extra spaces or indents

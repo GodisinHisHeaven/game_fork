@@ -5,7 +5,7 @@
 #include <catch/catch.hpp>
 #include <fork.hpp>
 
-TEST_CASE("constructor, getters, trim", "[Michael]") {
+TEST_CASE("constructor, getters, trim, file reading", "[Michael]") {
     Fork test("TestStory.txt");
 
     std::set<std::string> topleft{"topmid","midleft"};

@@ -2,12 +2,12 @@
 {action}:{info}:{action1}|{action2}|{action3}|{action4}|{action5}
 {action}:{info}:{action1}
 
-// to be stored in 'adj_'
-// action will be mapped to '{info}:{action1}{action2}...'
-// the first line will be the starting node
-// last line will be the ending node
-// make sure there are no dead ends
+# to be stored in 'adj_'
+# action will be mapped to '{info}:{action1}{action2}...'
+# the first line will be the starting node
+# last line will be the ending node
+# make sure there are no dead ends
 
-// example:
+# example:
 
 house:you start at the house. you may explore what's around you:look inside the bookshelf|check the desk|open the book in front of you

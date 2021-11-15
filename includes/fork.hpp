@@ -31,13 +31,16 @@ public:
     // returns path to end
     // "action -> action -> action"
     // use bfs or dfs
+    // @return returns path to end node
     std::string findEndNode();
 
 
     // counts distance from node to end node
+    // @return returns number of nodes to end node
     int nodesToEndNode();
 
     // put the user at the starting action
+    // @return puts the user at the start by changing 'currentAction'
     void restart();
 
     // copy game from one to another

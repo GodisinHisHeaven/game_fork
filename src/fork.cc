@@ -102,3 +102,24 @@ Fork::~Fork() {
     }
 }
 
+// TODO:
+std::string Fork::findEndNode() {
+    return "nothing";
+}
+
+int Fork::nodesToEndNode() {
+    return 0;
+}
+
+void Fork::restart() {
+    return;
+}
+
+Fork& Fork::operator=(const Fork& rhs) {
+    return *this;
+}
+
+// more functions to assist in traversal
+
+// other helper functions
+

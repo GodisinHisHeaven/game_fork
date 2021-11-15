@@ -28,6 +28,10 @@ public:
     // if you use standard libraries such as queue, map, vector, this is already taken care of
     ~Fork();
 
+    void setCurrentAction(std::string action) { currentAction = action; }
+
+    std::set<std::string> getCurrentActions() { return adj_.at(currentAction) ->actions; }
+
     // returns path to end
     // "action -> action -> action"
     // use bfs or dfs

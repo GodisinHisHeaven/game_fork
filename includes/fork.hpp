@@ -30,7 +30,7 @@ public:
 
     // returns path to end
     // "action -> action -> action"
-    // use bfs
+    // use bfs or dfs
     std::string findEndNode();
 
     // put the user at the starting action
@@ -54,10 +54,17 @@ private:
     std::map<std::string, Node<std::string>*> adj_;
 
     // keep track of where the user is located!
+    // set by constructor
+    // at start of game, startingAction == currentAction
     std::string currentAction;
 
     // used for restarting the game.
+    // set by constructor
     std::string startingAction;
+
+    // compare with this to see if end node is reached
+    // set by constructor
+    std::string endingAction;
 
     // removes trailing white space
     // @param str to be trimmed

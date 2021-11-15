@@ -13,6 +13,10 @@ Fork::Fork(std::string filename) {
             size_t pos1 = line.find_first_of(':');
             // std::cout << ">>" << line.substr(0,pos1) << "<<";
             NodeName = line.substr(0,pos1);
+            if (adj_.size() == 0) {
+                startingAction = NodeName;
+                currentAction = NodeName;
+            }
 
             line = line.substr(pos1 + 1);
             pos1 = line.find_first_of(':');
@@ -33,6 +37,8 @@ Fork::Fork(std::string filename) {
                 temp -> actions.emplace(line.substr(0,pos1));
                 line = line.substr(pos1 + 1);
             }
+            //continuously set NodeName, it will end up with the ending action
+            endingAction = NodeName;
         }
         // std::cout << std::endl;
         //add to adj list;
@@ -60,6 +66,10 @@ std::string Fork::trim(std::string str) {
 }
 
 void Fork::printAdj_() {
+    std::cout << "Starting Node:" << startingAction <<std::endl;
+    std::cout << "Current Node:" << currentAction <<std::endl;
+    std::cout << "Ending Node:" << endingAction  << "\n" <<std::endl;
+
     for (auto x: adj_) {
         std::cout << "Node Name:" << x.first <<std::endl;
         std::cout << "Node Info:" << x.second -> data <<std::endl;

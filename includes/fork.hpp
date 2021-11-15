@@ -33,6 +33,10 @@ public:
     // use bfs or dfs
     std::string findEndNode();
 
+
+    // counts distance from node to end node
+    int nodesToEndNode();
+
     // put the user at the starting action
     void restart();
 
@@ -46,6 +50,19 @@ public:
     // prints with same formatting as file
     void printOriginal();
 
+    // getters to return private member variabes;
+    std::map<std::string, Node<std::string>*> getAdj_() { return adj_; }
+
+    std::string getCurrentAction() { return currentAction; }
+
+    std::string getStartingAction() { return startingAction; }
+
+    std::string getEndingAction() { return endingAction; }
+
+    // removes trailing white space
+    // @param str to be trimmed
+    // @return returns string with no white space at the end
+    friend std::string trim(std::string str);
 private:
     // add more as needed
 
@@ -65,11 +82,6 @@ private:
     // compare with this to see if end node is reached
     // set by constructor
     std::string endingAction;
-
-    // removes trailing white space
-    // @param str to be trimmed
-    // @return returns string with no white space at the end
-    std::string trim(std::string str);
 };
 
 #endif

@@ -2,6 +2,23 @@
 
 #include <stdexcept>
 
+// // removes trailing white space
+//     // @param str to be trimmed
+//     // @return returns string with no white space at the end
+std::string trim(std::string str) {
+    // std::cout << "initial string:" << str.size() << std::endl;
+    int ind = str.size() - 1;
+    while (ind != 0) {
+        if (str[ind] != ' ') {
+            // std::cout << "charbreak:" << str[ind] << "<<" << std::endl;
+            break;
+        }
+        ind--;
+    }
+    // std::cout << "final string:" << str.substr(0,ind) << "<<" << std::endl;
+    return str.substr(0,ind + 1);
+}
+
 Fork::Fork(std::string filename) {
     std::fstream file;
     file.open(filename);
@@ -51,20 +68,6 @@ Fork::Fork(std::string filename) {
     }
 }
 
-std::string Fork::trim(std::string str) {
-    // std::cout << "initial string:" << str.size() << std::endl;
-    int ind = str.size() - 1;
-    while (ind != 0) {
-        if (str[ind] != ' ') {
-            // std::cout << "charbreak:" << str[ind] << "<<" << std::endl;
-            break;
-        }
-        ind--;
-    }
-    // std::cout << "final string:" << str.substr(0,ind) << "<<" << std::endl;
-    return str.substr(0,ind + 1);
-}
-
 void Fork::printAdj_() {
     std::cout << "Starting Node:" << startingAction <<std::endl;
     std::cout << "Current Node:" << currentAction <<std::endl;
@@ -98,3 +101,4 @@ Fork::~Fork() {
         delete x.second;
     }
 }
+

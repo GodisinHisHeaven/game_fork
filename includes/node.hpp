@@ -9,4 +9,5 @@ struct Node {
   std::set<T> actions;
 };
 
+
 #endif

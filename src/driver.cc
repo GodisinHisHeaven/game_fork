@@ -12,6 +12,6 @@ using namespace std;
 // determine the flow of the game Start screen -> directions -> play -> end screen -> credits
 
 int main() {
-    Fork test("TestStory.txt");
+    Fork test("semi-complex-story.txt");
     test.printAdj_();
 }

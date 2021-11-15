@@ -1,0 +1,21 @@
+# escape the house
+# sample game, may have errors/typos, but I'm pretty sure it's been checked over thoroughly.
+
+# view graph:
+# https://bit.ly/semi-complex-story-cs128
+# https://drive.google.com/file/d/1yMOnn2z3yid1yaE9rzw1A3lubu7lKuSf/view
+
+enter the house:You are locked in a strange house. you need to escape. find a way out at all costs.:move to the dining room|move to the living room
+move to the dining room:You see a book on the table:read the book on the coffee table
+read the book on the coffee table:"the key you seek is upstairs":go upstairs
+go upstairs:you see a bedroom that seems to be unlocked:go to the bedroom|move to the living room
+go to the bedroom:You see a drawer next to the bed. You think that maybe the book downstairs will give another clue:go read the book|check the drawer
+move to the living room:There isn't anything of use here. the next closest room is the laundry room:go to the laundry room
+go to the laundry room:you see a ladder. you can decide what is safest.:move to the dining room|go up the ladder
+go up the ladder:you find yourself in a bathroom. the bathroom has blood on the mirror:go to the hallway
+go to the hallway:You find that all the bedrooms are locked. you hear a shriek come from where you came from, but you decide to move forward:check the bedroom|move to the dining room
+check the bedroom:the master bedroom is empty, except for a single drawer:check the drawer
+check the drawer:you find the key. It looks like it goes to the window next to the doorway:exit the locked window|go to the hallway
+exit the locked window:Congrats. You have successfully escaped.:enter the house
+#
+# 'enter the house' on the last node is just a placeholder, nothing technically needs to go here because the game is now finished

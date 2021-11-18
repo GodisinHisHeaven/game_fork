@@ -1,0 +1,30 @@
+# this is the fork story
+
+enter the bathroom:You wake up in the bathroom. You don't know how you got there, but you need to GET OUT.:flush the toilet: enter the hallway
+flush the toilet:the toilet clogs. You turn around to see a strange hooded figure standing behind you with a bat.:enter the bathroom
+enter the hallway:You see various rooms around you. the hallway looks very empty.:enter the living room:go up the staircase:enter the laundry room:enter the basement hallway:enter the foyer
+enter the foyer:You get dizzy. You can't go any further here. Not today at least.:enter the hallway:attempt to keep going
+attempt to keep going:you faint:continue
+continue:you wake up to see a man dragging you:keep going
+keep going:you're too tired to do anything. you fall asleep:enter the bathroom
+enter the living room:There isn't much here besides a TV:enter the kitchen:enter the hallway:turn the TV on
+turn the TV on:all you get is static:enter the kitchen:enter the hallway
+go up the staircase:You see various rooms that look like they're at least a hundred years old:visit the upstairs bedroom:visit the children's bedroom:enter the master bedroom
+enter the laundry room:There is blood on the wall above the dryer that spells out your name.:enter the hallway
+enter the basement hallway:You see various rooms around you. the hallway looks very empty:open the door with the cross on it:enter the wine cellar:enter the unmarked door:enter the jailhouse
+open the door with the cross on it:the room is dimly lit from a light on the ceiling... a man comes out from the shadows...He has a baseball bat... You can't leave. You faint:enter the bathroom
+enter the wine cellar:You see various wine bottles on shelves, but nothing out of the ordinary.:drink the wine:enter the basement hallway
+drink the wine:You become too drunk to be able to stand. You go to the bathroom to puke:enter the bathroom.
+enter the unmarked door:You see a room full of creepy dolls.:pick one up:enter the basement hallway
+pick one up:it shrieks... you drop it back onto the floor:enter the basement hallway
+enter the jailhouse:You see bones scattered on the floor. You also see a strange drawer in the corner by a nightstand.:open the jailhouse drawer:enter the basement hallway
+open the jailhouse drawer:You find a key inside. It looks like it goes to something. You decide to take it.:enter the basement hallway
+enter the kitchen:You suddenly are very hungry.:eat food on the counter:enter the living room
+eat food on the counter:You pass out on the floor. You wake up back inside the bathroom.:enter the bathroom
+visit the upstairs bedroom:you see a bed with a strange drawer next to it. The door locks behind you:open the strange drawer
+open the strange drawer:YOU SHOULDN'T BE HERE. YOU WERE SUPPOSED TO BE GONE!!!!:enter the bathroom
+visit the children's bedroom:"sleep. it's been a long time since you slept." ...the door SLAMS behind you:sleep inside the bed
+sleep inside the bed:zzzzzzzz...zzzz...zzz...HEY:enter the bathroom
+enter the master bedroom:this requires a key to get into:enter the second floor chimney #hard-code-the-key-flag
+enter the second floor chimney: you exit through the roof and get out of the mansion: enter the bathroom #WIN
+

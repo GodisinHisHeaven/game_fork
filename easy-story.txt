@@ -1,0 +1,67 @@
+#For some kinds of story, I think we could have time limit. 
+For example, if we have a story that is about a certain amount of time, 
+we could have a timer that counts down, just like a story that you have to
+find a certain item in a certain amount of time. If you run out of time, you lose.
+
+#The timer is a simple counter that counts the choices you make.
+and we can design the story that has multiple paths to win but we could grade it by the time you finish.
+
+#This story is a simple example of a story which has a timer.
+
+#Find the antidote before the timer runs out. When the timer runs out, you turn into a zombie.
+
+#Graph: https://uillinoisedu-my.sharepoint.com/:i:/g/personal/mingjun6_illinois_edu/EQjBkgRwAbtOvXHfGNIUfkoBs9321nmC1IrKsETSmMtzEQ?e=UCJTm1
+
+#The shortest path is to go to the antidote before the timer runs out is 2 steps, but the 3 to 5 steps
+should be OK but we lower the score. For over 5 steps, the score is 0, which means you lose and you die.
+
+#You just bited by a zombie.
+
+A. "Ouch!" : You just got bitten by a zombie at basement of McKinley health center.
+choices:
+    1. "Try to find the antidote at the current room"
+
+B. "Try to find the antidote at the current room" : You just killed the zombie, 
+your heart is beating so fast, but you calm down and try to find the antidote in this room.
+choices:
+    1. "Check the desk"
+    2. "Check the closet"
+    3. "Go to lobby"
+    4. "Go to women's restroom"
+    5. "Go to men's restroom"
+
+C. "Check the desk" : You find nothing
+choices:
+    1. "Check the closet"
+    2. "Go to lobby"
+    3. "Go to women's restroom"
+    4. "Go to men's restroom"
+
+D. "Check the closet" : You find nothing
+choices:
+    1. "Go to lobby"
+    2. "Go to women's restroom"
+    3. "Go to men's restroom"
+
+E. "Go to lobby" : You entered the lobby
+choices:
+    1. "Go to men's restroom"
+    2. "Check the bin"
+
+F. "Check the bin" You find the antidote, you survived.
+
+G. "Go to women's restroom" : Just a restroom
+choices:
+    1. "Go back to the start room"
+
+H. "Go back to the start room" : You back
+choices:
+    1. "Go to lobby"
+    2. "Go to women's restroom"
+    3. "Go to men's restroom"
+
+I. "Go to men's restroom" : Just a restroom, but you can enter lobby!
+choices:
+    1. "Go to lobby"
+    2. "Go back to the start room"
+

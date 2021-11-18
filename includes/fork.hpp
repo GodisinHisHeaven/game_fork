@@ -18,6 +18,7 @@
 // add more public member functions as needed
 class Fork {
 public:
+    bool MasterBedroomKey = false;
 
     // take in filename and read it do adj_
     // this is where the file reading occurs

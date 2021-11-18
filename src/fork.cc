@@ -86,10 +86,10 @@ void Fork::printAdj_() {
 
 void Fork::printOriginal() {
     for (auto x: adj_) {
-        std::cout << x.first << ":" << x.second -> data << ":";
+        std::cout << x.first << ": " << x.second -> data << std::endl;
         std::string temp = "";
         for (auto y: x.second->actions) {
-            temp += y + "|";
+            temp += "| "+ y + " | ";
             // std::cout << y << "|";
         }
         std::cout << temp.substr(0,temp.size()-1) << std::endl;

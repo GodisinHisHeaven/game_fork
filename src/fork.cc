@@ -168,8 +168,6 @@ void Fork::restart() {
 }
 
 Fork& Fork::operator=(const Fork& rhs) {
-    this -> MasterBedroomKey = rhs.MasterBedroomKey;
-
     this -> adj_ = rhs.adj_;
 
     this -> currentAction = rhs.currentAction;

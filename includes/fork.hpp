@@ -7,6 +7,7 @@
 #include <sstream>
 #include <algorithm>
 #include <queue>
+#include <set>
 #include <iostream>
 #include <fstream>
 #include <cstring>
@@ -33,14 +34,9 @@ public:
 
     std::set<std::string> getCurrentActions() { return adj_.at(currentAction) ->actions; }
 
-    // returns path to end
-    // "action -> action -> action"
-    // use bfs or dfs
-    // @return returns path to end node
-    std::string findEndNode();
-
 
     // counts distance from node to end node
+    // uses BFS traversal
     // @return returns number of nodes to end node
     int nodesToEndNode();
 
@@ -72,11 +68,15 @@ public:
     // @return returns string with no white space at the end
     friend std::string trim(std::string str);
 private:
-    // add more as needed
+    void convertRaw();
 
     // stored adj list
     // maps strings to a set of nodes
     std::map<std::string, Node<std::string>*> adj_;
+
+    // stores raw adj list
+    //used for bfs traversal
+    std::map<std::string, std::vector<std::string>> raw_adj_;
 
     // keep track of where the user is located!
     // set by constructor

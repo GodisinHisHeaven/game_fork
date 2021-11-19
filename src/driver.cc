@@ -13,7 +13,8 @@ using namespace std;
 
 int main() {
     Fork test("semi-complex-story.txt");
-    test.printAdj_();
+    // test.printAdj_();
+    cout << test.nodesToEndNode();
 
 
     

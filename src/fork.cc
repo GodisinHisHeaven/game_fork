@@ -2,6 +2,20 @@
 
 #include <stdexcept>
 
+void Fork::convertRaw() {
+    for (auto x: adj_) {
+        std::vector<std::string> adjacentNodes;
+
+        std::string nodeName = x.first;
+
+        for (auto y: x.second->actions) {
+            adjacentNodes.push_back(y);
+        }
+
+        raw_adj_[nodeName] = adjacentNodes;
+    }
+}
+
 // // removes trailing white space
 //     // @param str to be trimmed
 //     // @return returns string with no white space at the end
@@ -66,6 +80,7 @@ Fork::Fork(std::string filename) {
         }
         
     }
+    convertRaw();
 }
 
 void Fork::printAdj_() {
@@ -102,20 +117,67 @@ Fork::~Fork() {
     }
 }
 
-// TODO:
-std::string Fork::findEndNode() {
-    return "nothing";
-}
-
 int Fork::nodesToEndNode() {
-    return 0;
+  std::queue<std::string> Q;
+  std::set<std::string> visited;
+  std::map<std::string, int> distance;
+
+  std::string start = startingAction;
+  std::string dest = endingAction;
+
+  int count = 1;
+  
+  distance.try_emplace(start, 0);
+  if (raw_adj_.count(start) == 0) {
+      return -1;
+  }
+  for (std::string x: raw_adj_.at(start)) {
+      Q.push(x);
+      visited.emplace(x);
+      distance.try_emplace(x, count);
+  }
+  visited.emplace(start);
+
+  while (Q.size() > 0) {
+      std::string node = Q.front();
+      Q.pop();
+      
+      if (raw_adj_.count(node) == 0) {
+          raw_adj_.try_emplace(node, std::vector<std::string>());
+      }
+      for (std::string x: raw_adj_.at(node)) {
+          if (visited.count(x) == 0) {
+              Q.push(x);
+              visited.emplace(x);
+              distance.try_emplace(x, distance.at(node) + 1);
+          }
+      }
+      if (distance.count(dest) != 0) {
+              return distance.at(dest);
+      }
+  }
+//   if (visited.count(dest) == 0) {
+//       return -1;
+//   }
+//   return distance.at(dest);
+    return -1;
 }
 
 void Fork::restart() {
-    return;
+    currentAction = startingAction;
 }
 
 Fork& Fork::operator=(const Fork& rhs) {
+    this -> MasterBedroomKey = rhs.MasterBedroomKey;
+
+    this -> adj_ = rhs.adj_;
+
+    this -> currentAction = rhs.currentAction;
+
+    this -> startingAction = rhs.startingAction;
+
+    this -> endingAction = rhs.endingAction;
+    
     return *this;
 }
 

@@ -180,8 +180,3 @@ Fork& Fork::operator=(const Fork& rhs) {
     
     return *this;
 }
-
-// more functions to assist in traversal
-
-// other helper functions
-

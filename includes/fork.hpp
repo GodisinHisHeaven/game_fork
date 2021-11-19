@@ -16,11 +16,8 @@
 
 // fork will be all backend, driver.cc will be used to create the user interface with terminal
 // user doesn't interact with this file
-// add more public member functions as needed
 class Fork {
 public:
-    bool MasterBedroomKey = false;
-
     // take in filename and read it do adj_
     // this is where the file reading occurs
     // @param filename to be read by constructor
@@ -30,8 +27,12 @@ public:
     // if you use standard libraries such as queue, map, vector, this is already taken care of
     ~Fork();
 
+    // sets the current action as "action"
+    //@param action action from the user
     void setCurrentAction(std::string action) { currentAction = action; }
 
+    //gets the current avaailable actions
+    // @return returns a set of the available actions
     std::set<std::string> getCurrentActions() { return adj_.at(currentAction) ->actions; }
 
 
@@ -54,6 +55,12 @@ public:
     // prints with same formatting as file
     void printOriginal();
 
+    // removes trailing white space
+    // @param str to be trimmed
+    // @return returns string with no white space at the end
+
+    friend std::string trim(std::string str);
+
     // getters to return private member variabes;
     std::map<std::string, Node<std::string>*> getAdj_() { return adj_; }
 
@@ -63,11 +70,11 @@ public:
 
     std::string getEndingAction() { return endingAction; }
 
-    // removes trailing white space
-    // @param str to be trimmed
-    // @return returns string with no white space at the end
-    friend std::string trim(std::string str);
+    
 private:
+    //converts story to story without info headers
+    // stored in raw_adj_
+    // used in constructor as helper function
     void convertRaw();
 
     // stored adj list

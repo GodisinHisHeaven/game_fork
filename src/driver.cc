@@ -18,11 +18,13 @@ void credits();
 
 // MAIN MENU 
 void menu() {
+    cout << "==============================" << endl; 
     cout << " Welcome to Fork!" << endl; 
     cout << "     1. Play"  << endl;
     cout << "     2. Read New Game" << endl;
     cout << "     3. Credits" << endl;
     cout << "     4. Exit" << endl;
+    cout << "==============================" << endl; 
     string i = "";
     int option= 0;
         while (std::cin >> i) {
@@ -44,7 +46,7 @@ void menu() {
                 credits();
         } 
         if (option == 4) {
-                return;
+                exit(-1);
         } 
         if (option < 1 || option > 4) {
             cout << CLEARCONSOLE;

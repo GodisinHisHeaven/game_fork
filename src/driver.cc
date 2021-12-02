@@ -22,25 +22,35 @@ void menu() {
     cout << "     1. Play"  << endl;
     cout << "     2. Read New Game" << endl;
     cout << "     3. Credits" << endl;
-    int i = 0;
-    cin >> i;
-     
-    if (i == 1) {
-        cout << CLEARCONSOLE;
-        cout << "Execute loaded game here" << endl;
-    }
-    if (i == 2) {
-        cout << CLEARCONSOLE;
-        cout << "Read new game here" << endl;
-    }
-    if (i == 3) {
-        cout << CLEARCONSOLE;
-            credits();
-    } 
-    if (i < 1 || i > 3) {
-        cout << CLEARCONSOLE;
-        menu();
-        cout << "Enter a valid value please" << endl;
+    cout << "     4. Exit" << endl;
+    string i = "";
+    int option= 0;
+        while (std::cin >> i) {
+        try {
+             option = stoi(i);
+        } catch (std::invalid_argument const& ex) {
+             option = 5;
+        }
+        if (option == 1) {
+            cout << CLEARCONSOLE;
+            cout << "Execute loaded game here" << endl;
+        }
+        if (option == 2) {
+            cout << CLEARCONSOLE;
+            cout << "Read new game here" << endl;
+        }
+        if (option == 3) {
+            cout << CLEARCONSOLE;
+                credits();
+        } 
+        if (option == 4) {
+                return;
+        } 
+        if (option < 1 || option > 4) {
+            cout << CLEARCONSOLE;
+            cout << "Enter a valid value please" << endl;
+            menu();
+        }
     }
 }
 //CREDITS
@@ -55,12 +65,12 @@ void credits() {
     }
 }
 
+
 int main() {
     
     menu();
-    Fork test("semi-complex-story.txt");
-    // test.printAdj_();
-    cout << test.nodesToEndNode();
+    
+  //  cout << test.nodesToEndNode();
 
 
     

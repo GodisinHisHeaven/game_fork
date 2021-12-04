@@ -15,16 +15,16 @@ const string CLEARCONSOLE = "\033[2J";
 
  
 void credits();
+void new_game();
+void loaded_game();
 
 // MAIN MENU 
 void menu() {
-    cout << "==============================" << endl; 
     cout << " Welcome to Fork!" << endl; 
     cout << "     1. Play"  << endl;
     cout << "     2. Read New Game" << endl;
     cout << "     3. Credits" << endl;
     cout << "     4. Exit" << endl;
-    cout << "==============================" << endl; 
     string i = "";
     int option= 0;
         while (std::cin >> i) {
@@ -36,17 +36,19 @@ void menu() {
         if (option == 1) {
             cout << CLEARCONSOLE;
             cout << "Execute loaded game here" << endl;
+            loaded_game();
         }
         if (option == 2) {
             cout << CLEARCONSOLE;
             cout << "Read new game here" << endl;
+            new_game();
         }
         if (option == 3) {
             cout << CLEARCONSOLE;
                 credits();
         } 
         if (option == 4) {
-                exit(-1);
+                return;
         } 
         if (option < 1 || option > 4) {
             cout << CLEARCONSOLE;
@@ -66,7 +68,14 @@ void credits() {
         menu();
     }
 }
-
+//NEW_GAME
+void new_game(){
+    //TODO
+}
+//LOADED_GAME
+void loaded_game() {
+    //TODO
+}
 
 int main() {
     

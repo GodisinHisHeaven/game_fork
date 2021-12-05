@@ -85,7 +85,7 @@ void new_game() {
 
         int i = 1;
         vector<string> current_actions;
-        for (string action: new_game.getCurrentActions()) {
+        for (string action : new_game.getCurrentActions()) {
             current_actions.push_back(action);
             cout << "Option " << i << ": " << action << endl;
             i++;
@@ -93,6 +93,12 @@ void new_game() {
 
         int option = 0;
         cin >> option;
+        if (option < 1 || option > i) {
+            cout << CLEARCONSOLE;
+            cout << "Enter a valid value please" << endl;
+            cout << new_game.getCurrentAction() << endl;
+            break;
+        }
         switch (option) {
             case 1 : {
                 new_game.setCurrentAction(current_actions[0]);
@@ -125,14 +131,6 @@ void new_game() {
             case 5: {
                 new_game.setCurrentAction(current_actions[4]);
                 cout << CLEARCONSOLE;
-                cout << new_game.getCurrentAction() << endl;
-                break;
-            }
-
-            default: {
-                cout << CLEARCONSOLE;
-                cout << "Enter a valid value please" << endl;
-                new_game.setCurrentAction(current_actions[0]);
                 cout << new_game.getCurrentAction() << endl;
                 break;
             }

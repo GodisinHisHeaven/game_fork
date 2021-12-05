@@ -1,6 +1,6 @@
 # this is the fork story
 
-enter the bathroom:You wake up in the bathroom. You don't know how you got there, but you need to GET OUT.:flush the toilet| enter the hallway
+enter the bathroom:You wake up in the bathroom. You don't know how you got there, but you need to GET OUT.:flush the toilet|enter the hallway
 flush the toilet:the toilet clogs. You turn around to see a strange hooded figure standing behind you with a bat.:enter the bathroom
 enter the hallway:You see various rooms around you. the hallway looks very empty.:enter the living room|go up the staircase|enter the laundry room|enter the basement hallway|enter the foyer
 enter the foyer:You get dizzy. You can't go any further here. Not today at least.:enter the hallway|attempt to keep going

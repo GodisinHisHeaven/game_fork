@@ -75,34 +75,77 @@ void credits() {
 
 //NEW_GAME
 //Start new game and use BFS to find the path to the end
+//Show the info when we arrive each node.
 void new_game() {
-    //TODO
     Fork new_game("forkStory.txt");
     cout << CLEARCONSOLE;
-    cout << new_game.getCurrentAction() << endl;
-    int i = 1;
-    for (auto action: new_game.getCurrentActions()) {
-        cout << "Option " << i << ": " << action << endl;
-        i++;
+    cout << new_game.getStartingAction() << endl;
+    while (new_game.getCurrentAction() != new_game.getEndingAction()) {
+        cout << new_game.getNodeInfo() << endl;
+
+        int i = 1;
+        vector<string> current_actions;
+        for (string action: new_game.getCurrentActions()) {
+            current_actions.push_back(action);
+            cout << "Option " << i << ": " << action << endl;
+            i++;
+        }
+
+        int option = 0;
+        cin >> option;
+        switch (option) {
+            case 1 : {
+                new_game.setCurrentAction(current_actions[0]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 2: {
+                new_game.setCurrentAction(current_actions[1]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 3: {
+                new_game.setCurrentAction(current_actions[2]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 4: {
+                new_game.setCurrentAction(current_actions[3]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 5: {
+                new_game.setCurrentAction(current_actions[4]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            default: {
+                cout << CLEARCONSOLE;
+                cout << "Enter a valid value please" << endl;
+                new_game.setCurrentAction(current_actions[0]);
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+        }
     }
-    int option = 0;
-    cin >> option;
-    switch (option) {
-        case 1 : {
 
-        }
-
-        case 2: {
-
-        }
-
-        case 3: {
-
-        }
-
-        case 4: {
-
-        }
+    if (new_game.getCurrentAction() == new_game.getEndingAction()) {
+        cout << "You Won!" << endl;
+        cout << "Press any key to continue" << endl;
+        string i = "";
+        cin >> i;
+        cout << CLEARCONSOLE;
+        credits();
     }
 
 }

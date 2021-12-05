@@ -16,6 +16,6 @@ go up the ladder:you find yourself in a bathroom. the bathroom has blood on the 
 go to the hallway:You find that all the bedrooms are locked. you hear a shriek come from where you came from, but you decide to move forward:check the bedroom|move to the dining room
 check the bedroom:the master bedroom is empty, except for a single drawer:check the drawer
 check the drawer:you find the key. It looks like it goes to the window next to the doorway:exit the locked window|go to the hallway
-exit the locked window:Congrats. You have successfully escaped.:enter the house
+exit the locked window:Congrats. You have successfully escaped.:enter the house 
 #
 # 'enter the house' on the last node is just a placeholder, nothing technically needs to go here because the game is now finished

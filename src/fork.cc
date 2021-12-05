@@ -122,7 +122,7 @@ int Fork::nodesToEndNode() {
     std::set<std::string> visited;
     std::map<std::string, int> distance;
 
-    std::string start = startingAction;
+    std::string start = currentAction;
     std::string dest = endingAction;
 
     int count = 1;
@@ -168,7 +168,19 @@ void Fork::restart() {
 }
 
 Fork &Fork::operator=(const Fork &rhs) {
-    this->adj_ = rhs.adj_;
+    for (auto x: adj_) {
+        delete x.second;
+    }
+    adj_.clear();
+    // std::map<std::string, Node<std::string>*> adj_;
+    for (std::pair<std::string, Node<std::string>*> x: rhs.adj_) {
+        Node<std::string> *temp = new Node<std::string>;
+        temp -> actions = x.second->actions;
+        temp -> data = x.second->data;
+
+        this -> adj_.emplace(x.first, temp);
+    }
+    // this->adj_ = rhs.adj_;
 
     this->currentAction = rhs.currentAction;
 

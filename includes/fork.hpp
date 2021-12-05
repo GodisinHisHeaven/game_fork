@@ -35,6 +35,11 @@ public:
     // @return returns a set of the available actions
     std::set<std::string> getCurrentActions() { return adj_.at(currentAction) ->actions; }
 
+    //gets the current node info
+    // @return string of available info about a node
+    template <typename T>
+    T getNodeInfo() { return adj_.at(currentAction) -> data;}
+
 
     // counts distance from node to end node
     // uses BFS traversal
@@ -69,7 +74,6 @@ public:
     std::string getStartingAction() { return startingAction; }
 
     std::string getEndingAction() { return endingAction; }
-
     
 private:
     //converts story to story without info headers

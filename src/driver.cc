@@ -75,33 +75,38 @@ void credits() {
 
 //NEW_GAME
 //Start new game and use BFS to find the path to the end
+//Show the info when we arrive each node.
 void new_game() {
-    //TODO
     Fork new_game("forkStory.txt");
     cout << CLEARCONSOLE;
-    cout << new_game.getCurrentAction() << endl;
-    int i = 1;
-    for (auto action: new_game.getCurrentActions()) {
-        cout << "Option " << i << ": " << action << endl;
-        i++;
-    }
-    int option = 0;
-    cin >> option;
-    switch (option) {
-        case 1 : {
-
+    cout << new_game.getStartingAction() << endl;
+    while (new_game.getCurrentAction() != new_game.getEndingAction()) {
+        int i = 1;
+        vector<string> current_actions;
+        for (string action: new_game.getCurrentActions()) {
+            cout << "Option " << i << ": " << action << endl;
+            current_actions.push_back(action);
+            i++;
         }
 
-        case 2: {
+        int option = 0;
+        cin >> option;
+        switch (option) {
+            case 1 : {
+                new_game.setCurrentAction(current_actions.at(0));
+            }
 
-        }
+            case 2: {
+                new_game.setCurrentAction(current_actions.at(1));
+            }
 
-        case 3: {
+            case 3: {
+                new_game.setCurrentAction(current_actions.at(2));
+            }
 
-        }
-
-        case 4: {
-
+            case 4: {
+                new_game.setCurrentAction(current_actions.at(3));
+            }
         }
     }
 

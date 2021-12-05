@@ -81,6 +81,8 @@ void new_game() {
     cout << CLEARCONSOLE;
     cout << new_game.getStartingAction() << endl;
     while (new_game.getCurrentAction() != new_game.getEndingAction()) {
+        cout << new_game.getNodeInfo() << endl;
+
         int i = 1;
         vector<string> current_actions;
         for (string action: new_game.getCurrentActions()) {

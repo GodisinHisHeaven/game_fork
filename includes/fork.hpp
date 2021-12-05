@@ -70,6 +70,10 @@ public:
 
     std::string getEndingAction() { return endingAction; }
 
+    //gets the current node info
+    // @return string of available info about a node
+     std::string getNodeInfo() { return adj_.at(currentAction) -> data;}
+
     
 private:
     //converts story to story without info headers

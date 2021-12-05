@@ -84,8 +84,8 @@ void new_game() {
         int i = 1;
         vector<string> current_actions;
         for (string action: new_game.getCurrentActions()) {
-            cout << "Option " << i << ": " << action << endl;
             current_actions.push_back(action);
+            cout << "Option " << i << ": " << action << endl;
             i++;
         }
 
@@ -93,19 +93,31 @@ void new_game() {
         cin >> option;
         switch (option) {
             case 1 : {
-                new_game.setCurrentAction(current_actions.at(0));
+                new_game.setCurrentAction(current_actions[0]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
             }
 
             case 2: {
-                new_game.setCurrentAction(current_actions.at(1));
+                new_game.setCurrentAction(current_actions[1]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
             }
 
             case 3: {
-                new_game.setCurrentAction(current_actions.at(2));
+                new_game.setCurrentAction(current_actions[2]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
             }
 
             case 4: {
-                new_game.setCurrentAction(current_actions.at(3));
+                new_game.setCurrentAction(current_actions[3]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
             }
         }
     }

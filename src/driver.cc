@@ -141,6 +141,13 @@ void new_game() {
                 cout << new_game.getCurrentAction() << endl;
                 break;
             }
+
+            default: {
+                cout << CLEARCONSOLE;
+                cout << "Enter a valid value please" << endl;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
         }
     }
 
@@ -220,26 +227,32 @@ void loaded_game() {
                 cout << loaded_game.getCurrentAction() << endl;
                 break;
             }
+
+            default: {
+                cout << CLEARCONSOLE;
+                cout << "Enter a valid value please" << endl;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+        }
+
+        if (loaded_game.getCurrentAction() == loaded_game.getEndingAction()) {
+            cout << "You Won!" << endl;
+            cout << "Press any key to continue" << endl;
+            string i = "";
+            cin >> i;
+            cout << CLEARCONSOLE;
+            credits();
         }
     }
 
-    if (loaded_game.getCurrentAction() == loaded_game.getEndingAction()) {
-        cout << "You Won!" << endl;
-        cout << "Press any key to continue" << endl;
-        string i = "";
-        cin >> i;
-        cout << CLEARCONSOLE;
-        credits();
+    int main() {
+
+        menu();
+
+        //  cout << test.nodesToEndNode();
+
     }
-}
-
-int main() {
-
-    menu();
-
-    //  cout << test.nodesToEndNode();
-
-}
 
 
 

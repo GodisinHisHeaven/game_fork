@@ -67,7 +67,7 @@ void credits() {
     cout << "Enter the R key to return back to main menu" << endl;
     char i = 'q';
     cin >> i;
-    if (i == 'R') {
+    if (i == 'R' || i == 'r') {
         cout << CLEARCONSOLE;
         menu();
     }

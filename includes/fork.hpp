@@ -74,14 +74,6 @@ public:
     std::string getStartingAction() { return startingAction; }
 
     std::string getEndingAction() { return endingAction; }
-<<<<<<< HEAD
-=======
-
-    //gets the current node info
-    // @return string of available info about a node
-     std::string getNodeInfo() { return adj_.at(currentAction) -> data;}
-
->>>>>>> 762c33fbeb7e9e9e2e1e041f1e3a2de08953c0ac
     
 private:
     //converts story to story without info headers

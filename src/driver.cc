@@ -119,7 +119,31 @@ void new_game() {
                 cout << new_game.getCurrentAction() << endl;
                 break;
             }
+
+            case 5: {
+                new_game.setCurrentAction(current_actions[4]);
+                cout << CLEARCONSOLE;
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
+
+            default: {
+                cout << CLEARCONSOLE;
+                cout << "Enter a valid value please" << endl;
+                new_game.setCurrentAction(current_actions[0]);
+                cout << new_game.getCurrentAction() << endl;
+                break;
+            }
         }
+    }
+
+    if (new_game.getCurrentAction() == new_game.getEndingAction()) {
+        cout << "You Won!" << endl;
+        cout << "Press any key to continue" << endl;
+        string i = "";
+        cin >> i;
+        cout << CLEARCONSOLE;
+        credits();
     }
 
 }

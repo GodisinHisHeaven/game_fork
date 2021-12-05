@@ -13,6 +13,8 @@ using namespace std;
 
 const string CLEARCONSOLE = "\033[2J";
 
+string current_location = " ";
+
 
 void credits();
 
@@ -85,7 +87,7 @@ void new_game() {
 
         int i = 1;
         vector<string> current_actions;
-        for (string action : new_game.getCurrentActions()) {
+        for (string action: new_game.getCurrentActions()) {
             current_actions.push_back(action);
             cout << "Option " << i << ": " << action << endl;
             i++;
@@ -102,6 +104,7 @@ void new_game() {
         switch (option) {
             case 1 : {
                 new_game.setCurrentAction(current_actions[0]);
+                current_location = current_actions[0];
                 cout << CLEARCONSOLE;
                 cout << new_game.getCurrentAction() << endl;
                 break;
@@ -109,6 +112,7 @@ void new_game() {
 
             case 2: {
                 new_game.setCurrentAction(current_actions[1]);
+                current_location = current_actions[1];
                 cout << CLEARCONSOLE;
                 cout << new_game.getCurrentAction() << endl;
                 break;
@@ -116,6 +120,7 @@ void new_game() {
 
             case 3: {
                 new_game.setCurrentAction(current_actions[2]);
+                current_location = current_actions[2];
                 cout << CLEARCONSOLE;
                 cout << new_game.getCurrentAction() << endl;
                 break;
@@ -123,6 +128,7 @@ void new_game() {
 
             case 4: {
                 new_game.setCurrentAction(current_actions[3]);
+                current_location = current_actions[3];
                 cout << CLEARCONSOLE;
                 cout << new_game.getCurrentAction() << endl;
                 break;
@@ -130,6 +136,7 @@ void new_game() {
 
             case 5: {
                 new_game.setCurrentAction(current_actions[4]);
+                current_location = current_actions[4];
                 cout << CLEARCONSOLE;
                 cout << new_game.getCurrentAction() << endl;
                 break;
@@ -150,8 +157,80 @@ void new_game() {
 
 //LOADED_GAME
 void loaded_game() {
-    //TODO
-    new_game();
+    Fork loaded_game("forkStory.txt");
+    loaded_game.setCurrentAction(current_location);
+    cout << CLEARCONSOLE;
+    cout << loaded_game.getStartingAction() << endl;
+    while (loaded_game.getCurrentAction() != loaded_game.getEndingAction()) {
+        cout << loaded_game.getNodeInfo() << endl;
+
+        int i = 1;
+        vector<string> current_actions;
+        for (string action: loaded_game.getCurrentActions()) {
+            current_actions.push_back(action);
+            cout << "Option " << i << ": " << action << endl;
+            i++;
+        }
+
+        int option = 0;
+        cin >> option;
+        if (option < 1 || option > i) {
+            cout << CLEARCONSOLE;
+            cout << "Enter a valid value please" << endl;
+            cout << loaded_game.getCurrentAction() << endl;
+            break;
+        }
+        switch (option) {
+            case 1 : {
+                loaded_game.setCurrentAction(current_actions[0]);
+                current_location = current_actions[0];
+                cout << CLEARCONSOLE;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 2: {
+                loaded_game.setCurrentAction(current_actions[1]);
+                current_location = current_actions[1];
+                cout << CLEARCONSOLE;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 3: {
+                loaded_game.setCurrentAction(current_actions[2]);
+                current_location = current_actions[2];
+                cout << CLEARCONSOLE;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 4: {
+                loaded_game.setCurrentAction(current_actions[3]);
+                current_location = current_actions[3];
+                cout << CLEARCONSOLE;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+
+            case 5: {
+                loaded_game.setCurrentAction(current_actions[4]);
+                current_location = current_actions[4];
+                cout << CLEARCONSOLE;
+                cout << loaded_game.getCurrentAction() << endl;
+                break;
+            }
+        }
+    }
+
+    if (loaded_game.getCurrentAction() == loaded_game.getEndingAction()) {
+        cout << "You Won!" << endl;
+        cout << "Press any key to continue" << endl;
+        string i = "";
+        cin >> i;
+        cout << CLEARCONSOLE;
+        credits();
+    }
 }
 
 int main() {
@@ -159,8 +238,6 @@ int main() {
     menu();
 
     //  cout << test.nodesToEndNode();
-
-
 
 }
 

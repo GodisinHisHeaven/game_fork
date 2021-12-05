@@ -97,6 +97,7 @@ void new_game() {
             cout << CLEARCONSOLE;
             cout << "Enter a valid value please" << endl;
             cout << new_game.getCurrentAction() << endl;
+            break;
         }
         switch (option) {
             case 1 : {

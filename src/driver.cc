@@ -24,11 +24,15 @@ void loaded_game();
 
 // MAIN MENU 
 void menu() {
+    cout << CLEARCONSOLE << endl;
     cout << " Welcome to Fork!" << endl;
     cout << "     1. Play" << endl;
     cout << "     2. Read New Game" << endl;
     cout << "     3. Credits" << endl;
     cout << "     4. Exit" << endl;
+    cout << endl;
+    cout << endl;
+    cout << "To select an option, please press a number listed above followed by enter." << endl;
     string i = "";
     int option = 0;
     while (std::cin >> i) {
@@ -141,13 +145,6 @@ void new_game() {
                 cout << new_game.getCurrentAction() << endl;
                 break;
             }
-
-            default: {
-                cout << CLEARCONSOLE;
-                cout << "Enter a valid value please" << endl;
-                cout << new_game.getCurrentAction() << endl;
-                break;
-            }
         }
     }
 
@@ -227,32 +224,23 @@ void loaded_game() {
                 cout << loaded_game.getCurrentAction() << endl;
                 break;
             }
-
-            default: {
-                cout << CLEARCONSOLE;
-                cout << "Enter a valid value please" << endl;
-                cout << loaded_game.getCurrentAction() << endl;
-                break;
-            }
-        }
-
-        if (loaded_game.getCurrentAction() == loaded_game.getEndingAction()) {
-            cout << "You Won!" << endl;
-            cout << "Press any key to continue" << endl;
-            string i = "";
-            cin >> i;
-            cout << CLEARCONSOLE;
-            credits();
         }
     }
 
-    int main() {
-
-        menu();
-
-        //  cout << test.nodesToEndNode();
-
+    if (loaded_game.getCurrentAction() == loaded_game.getEndingAction()) {
+        cout << "You Won!" << endl;
+        cout << "Press any key to continue" << endl;
+        string i = "";
+        cin >> i;
+        cout << CLEARCONSOLE;
+        credits();
     }
+}
 
+int main() {
 
+    menu();
 
+    //  cout << test.nodesToEndNode();
+
+}

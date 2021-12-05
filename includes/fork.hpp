@@ -37,8 +37,7 @@ public:
 
     //gets the current node info
     // @return string of available info about a node
-    template <typename T>
-    T getNodeInfo() { return adj_.at(currentAction) -> data;}
+    std::string getNodeInfo() { return adj_.at(currentAction) -> data;}
 
 
     // counts distance from node to end node

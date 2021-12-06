@@ -13,7 +13,7 @@ using namespace std;
 
 const string CLEARCONSOLE = "\033[2J";
 
-string current_location = "flush the toilet";
+string current_location = "";
 
 
 void credits();
@@ -91,21 +91,27 @@ void new_game() {
 
         int i = 1;
         vector<string> current_actions;
+        cout << "Enter 0 to save and return to Main Menu" << endl;
         for (string action: new_game.getCurrentActions()) {
             current_actions.push_back(action);
             cout << "Option " << i << ": " << action << endl;
             i++;
         }
 
-        int option = 0;
+        int option = -1;
         cin >> option;
-        if (option < 1 || option > i) {
+        if (option < 0 || option > i) {
             cout << CLEARCONSOLE;
             cout << "Enter a valid value please" << endl;
             cout << new_game.getCurrentAction() << endl;
             break;
         }
         switch (option) {
+            case 0 : {
+                cout << CLEARCONSOLE;
+                menu();
+                break;
+            }
             case 1 : {
                 new_game.setCurrentAction(current_actions[0]);
                 current_location = current_actions[0];
@@ -162,7 +168,7 @@ void new_game() {
 //LOADED_GAME
 void loaded_game() {
     Fork loaded_game("forkStory.txt");
-    loaded_game.setCurrentAction(current_location);
+    if (current_location != "") loaded_game.setCurrentAction(current_location);
     cout << CLEARCONSOLE;
     cout << loaded_game.getCurrentAction() << endl;
     while (loaded_game.getCurrentAction() != loaded_game.getEndingAction()) {
@@ -170,21 +176,27 @@ void loaded_game() {
 
         int i = 1;
         vector<string> current_actions;
+        cout << "Enter 0 to save and return to Main Menu" << endl;
         for (string action: loaded_game.getCurrentActions()) {
             current_actions.push_back(action);
             cout << "Option " << i << ": " << action << endl;
             i++;
         }
 
-        int option = 0;
+        int option = -1;
         cin >> option;
-        if (option < 1 || option > i) {
+        if (option < 0 || option > i) {
             cout << CLEARCONSOLE;
             cout << "Enter a valid value please" << endl;
             cout << loaded_game.getCurrentAction() << endl;
             break;
         }
         switch (option) {
+            case 0 : {
+                cout << CLEARCONSOLE;
+                menu();
+                break;
+            }
             case 1 : {
                 loaded_game.setCurrentAction(current_actions[0]);
                 current_location = current_actions[0];

@@ -84,6 +84,7 @@ void credits() {
 //Show the info when we arrive each node.
 void new_game() {
     Fork new_game("forkStory.txt");
+    current_location = "";
     cout << CLEARCONSOLE;
     cout << new_game.getStartingAction() << endl;
     while (new_game.getCurrentAction() != new_game.getEndingAction()) {

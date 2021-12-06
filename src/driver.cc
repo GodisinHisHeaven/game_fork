@@ -13,7 +13,7 @@ using namespace std;
 
 const string CLEARCONSOLE = "\033[2J";
 
-string current_location = " ";
+string current_location = "flush the toilet";
 
 
 void credits();
@@ -164,7 +164,7 @@ void loaded_game() {
     Fork loaded_game("forkStory.txt");
     loaded_game.setCurrentAction(current_location);
     cout << CLEARCONSOLE;
-    cout << loaded_game.getStartingAction() << endl;
+    cout << loaded_game.getCurrentAction() << endl;
     while (loaded_game.getCurrentAction() != loaded_game.getEndingAction()) {
         cout << loaded_game.getNodeInfo() << endl;
 

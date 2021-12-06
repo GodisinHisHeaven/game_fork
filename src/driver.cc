@@ -104,6 +104,10 @@ void new_game() {
             cout << CLEARCONSOLE;
             cout << "Enter a valid value please" << endl;
             cout << new_game.getCurrentAction() << endl;
+            int i = 1;
+            for (auto it = current_actions.begin(); it != current_actions.end(); it++, i++) {
+                cout << "Option " << i << ": " << *it << endl;
+            }
             break;
         }
         switch (option) {
@@ -189,6 +193,10 @@ void loaded_game() {
             cout << CLEARCONSOLE;
             cout << "Enter a valid value please" << endl;
             cout << loaded_game.getCurrentAction() << endl;
+            int i = 1;
+            for (auto it = current_actions.begin(); it != current_actions.end(); it++, i++) {
+                cout << "Option " << i << ": " << *it << endl;
+            }
             break;
         }
         switch (option) {

@@ -28,11 +28,11 @@ Here is a possible roadmap for completing the work (subject to change):
 1. Complete story and story building (Everyone)
 2. Create the file reading structure (Charles)
 3. Determine the flow of the game Start screen -> directions -> play -> end screen -> credits (Mingjun)
-4. Design and implement adjacency list to store nodes (Michael)
+4. Design and implement adjacency list to store nodes (Everyone)
 5. Implement and test basic traversal, including edge cases (Cooper)
 6. Create the User interface (Cooper / Mingjun)
 7. Design and implement, test edge cases (Charles)
-8. Test all the functionality together using Catch2 (Michael)
+8. Test all the functionality together using Catch2 (Everyone)
 9. If time permits, implementation of other features to enhance user experience will be done (Everyone)
 
 

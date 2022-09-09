@@ -32,7 +32,7 @@ Here is a possible roadmap for completing the work (subject to change):
 5. Implement and test basic traversal, including edge cases (Cooper)
 6. Create the User interface (Cooper / Mingjun)
 7. Design and implement, test edge cases (Charles)
-8. Test all the functionality together using Catch2 (Everyone)
+8. Test all the functionality together using Catch2 (Michael)
 9. If time permits, implementation of other features to enhance user experience will be done (Everyone)
 
 
